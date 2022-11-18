@@ -1,13 +1,27 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carford</title>
+    <meta charset="utf-8">
+    {% include 'common/link.html' %}
 </head>
-<body>
-    {% block main %}    
+
+<body class="bg-secondary">
+    <header>
+        {% include 'common/header.html' %}
+    </header>
+    <hr style="background-color: white;">
+    <div class="container-fluid">
+    {% block main %}
+    
     {% endblock %}
+    <footer class="pt-2 my-md-2 pt-md-4 border-top fixed-bottom">
+        <div class="row">
+            {% include 'common/footer.html' %}
+        </div>
+    </footer>
 </body>
-</html>
+{% include 'common/script.html' %}
+
+</html>                                             

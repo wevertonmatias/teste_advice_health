@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <a class="btn btn-success text-white"
+    href="{% url 'owner_create'%}" >
+        Create Car
+    </a>
+    <br>
+    <div class="table-responsive">
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th>ID</th>
+                <th scope="col"> Description</th>
+                <th scope="col"> Color</th>
+                <th scope="col"> Model</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for car in object_list%}
+            <tr>
+                <th scope="row">{{ car.id}}</th>
+                <td>{{ car.description }}</td>
+                <td>{{ car.color }}</td>
+                <td>{{ car.model_car }}</td>
+            </tr>
+            </a>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <p class="paginator">
+    {% if is_paginated %}
+        <div>
+            <span class="page-links">
+                <div class="row">
+                    <div class="col-sm">
+                        {% if page_obj.has_previous %}
+                        <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-light">Previous</a>
+                        {% endif %}
+                    </div>
+                    {% if page_obj.has_next %}
+                    <div class="col-sm">
+                        <a href="?page={{ page_obj.next_page_number }}" class="btn btn-light">Next</a>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="page-links">    
+                    <span class="page-current">
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    </span>
+                </div>
+            </span>
+        </div>
+    {% endif %}
+    </p>
+{% endblock %}

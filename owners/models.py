@@ -7,4 +7,4 @@ class Owner(models.Model):
     telefone = models.CharField(max_length=255, null=False, blank=False, verbose_name="Phone Number (*).")
 
     def __str__(self):
-        return "{} - {}".format(self.nome, self.cpf)
+        return "{} - {}".format(self.name, self.cpf)

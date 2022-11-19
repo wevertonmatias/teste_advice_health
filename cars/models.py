@@ -1,4 +1,5 @@
 from django.db import models
+from owners.models import Owner
 
 # Create your models here.
 class ColorCar(models.Model):
@@ -19,3 +20,4 @@ class Car(models.Model):
     description = models.CharField(max_length=255, null=False, blank=False)
     color = models.ForeignKey(ColorCar, on_delete=models.SET_NULL, null=True, blank=False)
     model_car = models.ForeignKey(ModelsCar, on_delete=models.SET_NULL, null=True, blank=False)
+    owner = models.ForeignKey(Owner, on_delete=models.SET_NULL, null=True, blank=False)

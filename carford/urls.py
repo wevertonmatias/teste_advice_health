@@ -20,6 +20,6 @@ from owners import urls as urls_owner
 
 urlpatterns = [
     path('', Index.as_view(), name='index'),
-    path('owners/', include(urls_owner)),
+    path('owner/', include(urls_owner)),
     path('admin/', admin.site.urls),
 ]

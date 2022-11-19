@@ -17,9 +17,11 @@ from django.urls import path, include
 from django.contrib import admin
 from .views import Index
 from owners import urls as urls_owner
+from cars import urls as urls_car
 
 urlpatterns = [
     path('', Index.as_view(), name='index'),
     path('owner/', include(urls_owner)),
+    path('car/', include(urls_car)),
     path('admin/', admin.site.urls),
 ]

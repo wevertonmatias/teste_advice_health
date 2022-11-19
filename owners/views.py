@@ -5,14 +5,14 @@ from django.urls import reverse_lazy
 from .models import Owner
 
 class Owners(ListView):
-    template_name = 'list.html'
+    template_name = 'owners/list.html'
     model = Owner
     fields = '__all__'
     paginate_by = 2
 
 
 class OwnersCreate(CreateView):
-    template_name = 'create.html'
+    template_name = 'owners/create.html'
     model = Owner
     fields = '__all__'
 

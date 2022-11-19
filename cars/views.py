@@ -7,13 +7,13 @@ from .models import Car
 # Create your views here.
 
 class CarsList(ListView):
-    template_name = 'list.html'
+    template_name = 'cars/list.html'
     model = Car
     fields = '__all__'
 
 
 class CarsCreate(CreateView):
-    template_name = 'create.html'
+    template_name = 'cars/create.html'
     model = Car
     fields = '__all__'
 

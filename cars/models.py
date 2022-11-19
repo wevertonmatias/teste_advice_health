@@ -4,9 +4,16 @@ from django.db import models
 class ColorCar(models.Model):
     description = models.CharField(max_length=255, null=False, blank=False)
 
+    def __str__(self):
+        return self.description
+
 
 class ModelsCar(models.Model):
     description = models.CharField(max_length=255, null=False, blank=False)
+    
+    def __str__(self):
+        return self.description
+
 
 class Car(models.Model):
     description = models.CharField(max_length=255, null=False, blank=False)
